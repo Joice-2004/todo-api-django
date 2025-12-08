@@ -36,7 +36,7 @@ class TodoView(APIView):
         except Todo.DoesNotExist:
             return Response({"error": "Not found"}, status=404)
 
-        serializer = TodoSerializer(todo, data=request.data)
+        serializer = TodoSerializer(todo, data=request.data,partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

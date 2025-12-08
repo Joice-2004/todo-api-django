@@ -23,10 +23,6 @@ from todoapp.views import TodoView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/hello/', hello_view),
-    path('api/todo/create/', TodoView.as_view()),
-    path('api/todo/get/<int:id>/', TodoView.as_view()),
-    path('api/todo/update/<int:id>/', TodoView.as_view()),
-    path('api/todo/delete/<int:id>/', TodoView.as_view()),
-    path('api/todo/get_all/', TodoView.as_view()),
+    path('api/todo/', include('todoapp.urls')),
 
 ]
