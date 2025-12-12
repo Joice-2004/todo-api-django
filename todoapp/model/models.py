@@ -7,7 +7,7 @@ class Todo(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        db_table = "todo"            # Custom table name
+        db_table = "todo"
 
     @staticmethod
     def create(title: str, description: str = "", is_completed: bool = False):
