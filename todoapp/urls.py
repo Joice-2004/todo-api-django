@@ -1,10 +1,13 @@
 from django.urls import path
-from .views import TodoView
+from todoapp.todo_controller import (
+    create, get_all, get_one, update, delete
+)
 
 urlpatterns = [
-    path('create/', TodoView.as_view()),
-    path('get_all/', TodoView.as_view()),
-    path('get/<int:id>/', TodoView.as_view()),
-    path('update/<int:id>/', TodoView.as_view()),
-    path('delete/<int:id>/', TodoView.as_view()),
+    path("create/", create),
+    path("all/", get_all),
+    path("get/<int:id>/", get_one),
+    path("update/<int:id>/", update),
+    path("delete/<int:id>/", delete),
 ]
+
