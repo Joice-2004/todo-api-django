@@ -18,9 +18,22 @@ class Todo(models.Model):
         )
         return todo
 
+
+
     @staticmethod
-    def get_all():
-        return Todo.objects.all()
+    def get_all(params=None):
+        qs = Todo.objects.all()
+
+        if not params:
+            return qs
+
+        page_num = int(params.get("page_num", 1))
+        limit = int(params.get("limit", 10))
+
+        start = (page_num - 1) * limit
+        end = start + limit
+
+        return qs[start:end]
 
     @staticmethod
     def get_one(todo_id: int):

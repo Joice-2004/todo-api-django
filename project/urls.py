@@ -22,6 +22,7 @@ from .views import hello_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/hello/', hello_view),
-    path('api/todo/', include('todoapp.urls')),
+    path('api/todo/', include('project.feature.todoapp.urls')),
+    path("api/songs/", include("project.feature.songsapp.urls")),
 
 ]

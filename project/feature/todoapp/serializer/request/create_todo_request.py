@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from todoapp.dataclass.todo_request import CreateTodoRequest
+from project.feature.todoapp.dataclass.todo_request import CreateTodoRequest
 
 class CreateTodoRequestSerializer(serializers.Serializer):
     title = serializers.CharField(max_length=255)
