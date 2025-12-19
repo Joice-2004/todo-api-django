@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from project.feature.songsapp.dataclass.songs_request import UpdateSongRequest
+from feature.songsapp.dataclass.songs_request import UpdateSongRequest
 
 class UpdateSongRequestSerializer(serializers.Serializer):
     name = serializers.CharField(required=False, allow_blank=True)

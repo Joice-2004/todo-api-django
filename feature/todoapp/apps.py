@@ -2,6 +2,6 @@ from django.apps import AppConfig
 
 class TodoappConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'project.feature.todoapp'
+    name = 'feature.todoapp'
 
 

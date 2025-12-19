@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from project.feature.songsapp.dataclass.songs_request import CreateSongRequest
+from feature.songsapp.dataclass.songs_request import CreateSongRequest
 
 class CreateSongRequestSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=255)

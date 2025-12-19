@@ -21,18 +21,8 @@ class Song(models.Model):
 
     @staticmethod
     def get_all(params=None):
-        qs = Song.objects.all()
+        return Song.objects.all()
 
-        if not params:
-            return qs
-
-        page_num = int(params.get("page_num", 1))
-        limit = int(params.get("limit", 10))
-
-        start = (page_num - 1) * limit
-        end = start + limit
-
-        return qs[start:end]
 
     @staticmethod
     def get_one(song_id):

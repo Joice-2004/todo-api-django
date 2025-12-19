@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from project.feature.todoapp.dataclass.todo_request import UpdateTodoRequest
+from feature.todoapp.dataclass.todo_request import UpdateTodoRequest
 
 class UpdateTodoRequestSerializer(serializers.Serializer):
     title = serializers.CharField(required=False, allow_blank=True)
