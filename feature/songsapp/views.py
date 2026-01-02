@@ -5,15 +5,28 @@ from feature.common.utils import Utils
 from rest_framework import status
 from rest_framework.request import Request
 from django.core.paginator import Paginator
+from feature.musicdirector.model.models import MusicDirector
+
 
 class SongView:
 
     def create(self, params):
+        director = MusicDirector.objects.filter(
+            id=params.music_director_id
+        ).first()
+
+        if not director:
+            return Response(
+                Utils.error_response("Invalid director", "Music director not found"),
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
         song = Song.create(
             name=params.name,
             description=params.description,
             singers=params.singers,
-            is_active=params.is_active
+            is_active=params.is_active,
+            music_director = director
         )
         data = SongResponseSerializer(song).data
         return Response(status=status.HTTP_201_CREATED,
@@ -25,7 +38,7 @@ class SongView:
         page_num = int(params.get("page_num", 1))
         limit = int(params.get("limit", 10))
 
-        qs = Song.get_all()  # full queryset
+        qs = Song.get_all()
 
         pages = Paginator(qs, limit)
         if pages.num_pages < page_num:

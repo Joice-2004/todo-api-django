@@ -5,7 +5,9 @@ class CreateSongRequest:
     name: str
     description: str
     singers: str
+    music_director_id: int
     is_active: bool = True
+
 
 
 @dataclass

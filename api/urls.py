@@ -24,5 +24,5 @@ urlpatterns = [
     path('api/hello/', hello_view),
     path('api/todo/', include('feature.todoapp.urls')),
     path("api/songs/", include('feature.songsapp.urls')),
-
+    path('api/music-director/', include('feature.musicdirector.urls')),
 ]

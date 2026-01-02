@@ -5,6 +5,7 @@ class CreateSongRequestSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=255)
     description = serializers.CharField(required=False, allow_blank=True)
     singers = serializers.CharField(max_length=255)
+    music_director_id = serializers.IntegerField()
     is_active = serializers.BooleanField(required=False)
 
     def create(self, validated_data):

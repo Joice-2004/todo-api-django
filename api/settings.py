@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'feature.todoapp',
     'feature.songsapp',
     'rest_framework',
+    'feature.musicdirector',
 ]
 
 MIDDLEWARE = [
