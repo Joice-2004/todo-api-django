@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'feature.todoapp',
     'feature.songsapp',
     'rest_framework',
+    'drf_yasg',
     'feature.musicdirector',
 ]
 
